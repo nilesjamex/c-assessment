@@ -1,28 +1,33 @@
 $white: #ffffff;
 $black: #000000;
+$primary-color: #333;
+$secondary-color: #dde3ea;
+$border-radius: 12px;
+$transition-duration: 0.3s;
+$overlay-color: rgba(0, 0, 0, 0.6);
 
 $green: #3fc380;
 $orange: #f17427;
 $red: #f96066;
 $light-blue: #90afec;
 $grey: #c4c4c4;
-$grey-1: #E5E5E5;
-$grey-2: #F5F5F7;
-$grey-3: #D3D9E5;
+$grey-1: #e5e5e5;
+$grey-2: #f5f5f7;
+$grey-3: #d3d9e5;
 $shadow-blue: -10px 35px 54px rgba(144, 175, 236, 0.1);
 $shadow-green: -10px 35px 54px rgba(63, 195, 128, 0.15);
 
 $z-indexes: (
-	'noscript',
-	'preloader',
-	'cursor',
-	'navigation',
-	'content',
-	'canvas',
-	'4',
-	'3',
-	'2',
-	'1'
+  "noscript",
+  "preloader",
+  "cursor",
+  "navigation",
+  "content",
+  "canvas",
+  "4",
+  "3",
+  "2",
+  "1"
 );
 
 $ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
