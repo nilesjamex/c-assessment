@@ -234,14 +234,14 @@ const getCardClass = (index) => {
   if (index % 3 === 2) return "right";
 };
 
-const getCardStyle = (index) => {
-  const row = Math.floor(index / 3) + 1;
-  const column = (index % 3) + 1;
-  return {
-    gridRow: row,
-    gridColumn: column,
-  };
-};
+// const getCardStyle = (index) => {
+//   const row = Math.floor(index / 3) + 1;
+//   const column = (index % 3) + 1;
+//   return {
+//     gridRow: row,
+//     gridColumn: column,
+//   };
+// };
 
 onMounted(() => {
   fetchImages(searchQuery.value);
@@ -357,14 +357,13 @@ onUnmounted(() => {
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 300px;
-    grid-auto-flow: dense;
     grid-gap: 10px;
-    gap: 5rem;
+    gap: 1rem;
     padding: 0 2rem;
     margin-top: -4rem;
     @include respondMax("tablet") {
       grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
     }
   }
   &__cards {
@@ -373,26 +372,82 @@ onUnmounted(() => {
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     @include hover-lift;
-    &.left {
-      height: 350px;
-      // grid-row: 3;
-      // &:not(:first-child) {
-      //   margin-top: -10rem;
-      // }
+    &:nth-child(1) {
+      grid-column: 1;
+      grid-row: 1;
+      aspect-ratio: 1;
     }
 
-    &.middle {
-      height: 450px;
-      // grid-row: 4;
+    &:nth-child(2) {
+      grid-column: 2;
+      grid-row: 1;
+      aspect-ratio: 3/4;
     }
 
-    &.right {
-      height: 400px;
-      // grid-row: 3;
+    &:nth-child(3) {
+      grid-column: 3;
+      grid-row: 1;
+      aspect-ratio: 1;
+    }
+
+    &:nth-child(4) {
+      grid-column: 1;
+      grid-row: 2;
+      margin-top: -100px;
+      aspect-ratio: 1;
+    }
+
+    &:nth-child(5) {
+      grid-column: 2;
+      grid-row: 2;
+      aspect-ratio: 3/4;
+    }
+
+    &:nth-child(6) {
+      grid-column: 3;
+      grid-row: 2;
+      margin-top: -100px;
+      aspect-ratio: 1;
+    }
+
+    &:nth-child(7) {
+      grid-column: 1;
+      grid-row: 3;
+      margin-top: -200px;
+      aspect-ratio: 1;
+    }
+
+    &:nth-child(8) {
+      grid-column: 2;
+      grid-row: 3;
+      aspect-ratio: 3/4;
+    }
+
+    &:nth-child(9) {
+      grid-column: 3;
+      grid-row: 3;
+      margin-top: -200px;
+      aspect-ratio: 1;
+    }
+    @include respondMax("tablet") {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(8),
+      &:nth-child(9) {
+        grid-column: auto;
+        grid-row: auto;
+        aspect-ratio: auto;
+        margin-top: unset;
+      }
     }
     &__image {
       position: relative;
-      padding-top: 125%;
+      padding-top: 135%;
       & > img {
         position: absolute;
         top: 0;
